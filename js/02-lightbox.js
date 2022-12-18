@@ -16,5 +16,5 @@ return `<a data-lightbox="lbox"  class="gallery__item" href="${original}">
 </a>`
     }).join("") 
 }
-let lightbox = new SimpleLightbox('.gallery a', {});
+let lightbox = new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250});
 
