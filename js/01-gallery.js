@@ -31,14 +31,20 @@ divGallery.addEventListener('click', onClickImg);
 
 function onClickImg (evn) {
 
+  if(evn.target.nodeName !== "IMG") {
+    return
+  }
     const instance = basicLightbox.create(`
     <img src="${evn.target.dataset.source}" width="800" height="600">
 `)
 instance.show()
 
+
+
 document.addEventListener("keydown", event => {
     
     if (event.key === "Escape") {
+      return instance.close()
         console.log("keydown", event)  
     }
    
