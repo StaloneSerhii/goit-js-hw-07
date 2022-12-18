@@ -3,6 +3,7 @@ import { galleryItems } from './gallery-items.js';
 
 
 
+ 
 const allImg = document.querySelector('.gallery');
 const listImg = onGallery(galleryItems);
 allImg.insertAdjacentHTML("beforeend", listImg);
@@ -10,11 +11,10 @@ allImg.insertAdjacentHTML("beforeend", listImg);
 function onGallery (galleryItems) {
 
     return galleryItems.map(({description,original,preview}) => {
-return `<a  class="gallery__item" href="${original}">
+return `<a data-lightbox="lbox"  class="gallery__item" href="${original}">
 <img onclick="return false"; class="gallery__image" src="${preview}" alt="${description}" />
 </a>`
-    }).join("")
+    }).join("") 
 }
-
-var lightbox = new SimpleLightbox('.gallery a', {}); 
+let lightbox = new SimpleLightbox('.gallery a', {});
 
